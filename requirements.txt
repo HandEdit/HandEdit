@@ -1,0 +1,13 @@
+numpy
+pandas
+Pillow
+scipy
+scikit-image
+tqdm
+tabulate
+torch
+lpips
+clean-fid
+transformers
+huggingface_hub
+openai

@@ -1,0 +1,13 @@
+{
+  "000001": {
+    "replacement_scope": "hand",
+    "target_name": "Shadow Hand",
+    "src_path": "data/src/000001.png",
+    "pred_path": "data/pred/000001.png",
+    "gt_path": "data/gt/000001.png",
+    "human_mask_path": "data/human_mask/000001.png",
+    "robot_mask_path": "data/robot_mask/000001.png",
+    "object_mask_path": "data/object_mask/000001.png",
+    "urdf_ref_path": "data/urdf/000001.png"
+  }
+}
