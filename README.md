@@ -36,14 +36,6 @@ The [full dataset and release metadata](https://huggingface.co/datasets/HandEdit
 
 The pseudo-GT pipeline combines human-region segmentation, background restoration, kinematic retargeting, robot rendering, and compositing. Automatic checks and human screening are applied throughout the pipeline.
 
-### Harmonized pseudo-references
-
-We train a lightweight Harmonizer on 10,000 natural egocentric hand images and apply it to the rendered robot region. It improves lighting, color, and boundary consistency while keeping robot pose and hand-object geometry unchanged. We use the harmonized references for an additional analysis on one tenth of the official test set; the main benchmark retains the original composites.
-
-![Human input, original pseudo-reference, and harmonized pseudo-reference](assets/readme/harmonization_comparison.jpg)
-
-[Harmonizer inference wrapper and checkpoint](harmonizer/)
-
 ### Pseudo-GT quality audit
 
 We uniformly sample 5,000 frames from the 734,864 final non-kept ARCTIC frames and assign one primary failure cause to each frame.
@@ -98,6 +90,14 @@ The following sequences preserve the fixed base but fail the feasibility review,
   <a href="assets/readme/virtual_base_hocap_rejected.mp4"><img src="assets/readme/virtual_base_hocap_rejected_poster.jpg" width="100%" style="display: block;" alt="Rejected HO-Cap Hand-Arm feasibility case. Click to play."></a>
   <video src="assets/readme/virtual_base_hocap_rejected.mp4" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_hocap_rejected_poster.jpg" title="Rejected HO-Cap Hand-Arm feasibility case" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000;"></video>
 </div>
+
+### Harmonized pseudo-references
+
+We train a lightweight Harmonizer on 10,000 natural egocentric hand images and apply it to the rendered robot region. It improves lighting, color, and boundary consistency while keeping robot pose and hand-object geometry unchanged. We use the harmonized references for an additional analysis on one tenth of the official test set; the main benchmark retains the original composites.
+
+![Human input, original pseudo-reference, and harmonized pseudo-reference](assets/readme/harmonization_comparison.png)
+
+[Harmonizer inference wrapper and checkpoint](harmonizer/)
 
 ## Human-to-robot editing with LongCat-Image
 
