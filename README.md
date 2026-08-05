@@ -80,8 +80,6 @@ The following sequences preserve the fixed base but fail the feasibility review,
 
 We train a lightweight Harmonizer on 10,000 natural egocentric hand images and apply it to the rendered robot region. It improves lighting, color, and boundary consistency while keeping robot pose and hand-object geometry unchanged. We use the harmonized references for an additional analysis on one-tenth of the official test set; the main benchmark retains the original composites.
 
-![Human input, original pseudo-reference, and harmonized pseudo-reference](assets/readme/harmonization_comparison.png)
-
 [Harmonizer inference wrapper and checkpoint](harmonizer/)
 
 ## Human-to-robot editing with LongCat-Image
