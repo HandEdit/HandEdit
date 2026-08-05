@@ -8,10 +8,7 @@
 
 </div>
 
-<div style="position: relative; line-height: 0;">
-  <a href="assets/readme/teaser.mp4"><img src="assets/readme/teaser_poster.jpg" width="100%" style="display: block;" alt="HandEdit overview video. Click to play."></a>
-  <video src="assets/readme/teaser.mp4" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/teaser_poster.jpg" title="HandEdit overview video" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000;"></video>
-</div>
+<video src="https://github.com/user-attachments/assets/d377dc0a-7215-40c6-bbf2-622567abb19a" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/teaser_poster.jpg" width="100%" title="HandEdit overview video"></video>
 
 ## Overview
 
@@ -61,17 +58,11 @@ Each clip is arranged as **human operation · robot third-person view · robot f
 
 **ARCTIC** — `s04__box_use_01_view0`, frames 39–326
 
-<div style="position: relative; line-height: 0;">
-  <a href="assets/readme/virtual_base_arctic_accepted.mp4"><img src="assets/readme/virtual_base_arctic_accepted_poster.jpg" width="100%" style="display: block;" alt="Accepted ARCTIC fixed-base placement. Click to play."></a>
-  <video src="assets/readme/virtual_base_arctic_accepted.mp4" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_arctic_accepted_poster.jpg" title="Accepted ARCTIC fixed-base placement" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000;"></video>
-</div>
+<video src="https://github.com/user-attachments/assets/1c27b881-719b-4f2e-a9a2-2bb92f1730cf" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_arctic_accepted_poster.jpg" width="100%" title="Accepted ARCTIC fixed-base placement"></video>
 
 **HO-Cap** — `subject7_20231023_163653`, frames 210–509
 
-<div style="position: relative; line-height: 0;">
-  <a href="assets/readme/virtual_base_hocap_accepted.mp4"><img src="assets/readme/virtual_base_hocap_accepted_poster.jpg" width="100%" style="display: block;" alt="Accepted HO-Cap fixed-base placement. Click to play."></a>
-  <video src="assets/readme/virtual_base_hocap_accepted.mp4" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_hocap_accepted_poster.jpg" title="Accepted HO-Cap fixed-base placement" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000;"></video>
-</div>
+<video src="https://github.com/user-attachments/assets/6d25f0a0-c6b2-4240-ae95-f24e20fb6c15" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_hocap_accepted_poster.jpg" width="100%" title="Accepted HO-Cap fixed-base placement"></video>
 
 #### Rejected Hand-Arm feasibility cases
 
@@ -79,17 +70,11 @@ The following sequences preserve the fixed base but fail the feasibility review,
 
 **ARCTIC** — delayed arm control and static object
 
-<div style="position: relative; line-height: 0;">
-  <a href="assets/readme/virtual_base_arctic_rejected.mp4"><img src="assets/readme/virtual_base_arctic_rejected_poster.jpg" width="100%" style="display: block;" alt="Rejected ARCTIC Hand-Arm feasibility case. Click to play."></a>
-  <video src="assets/readme/virtual_base_arctic_rejected.mp4" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_arctic_rejected_poster.jpg" title="Rejected ARCTIC Hand-Arm feasibility case" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000;"></video>
-</div>
+<video src="https://github.com/user-attachments/assets/19547e43-8ab8-4020-b225-ab5958a0ef97" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_arctic_rejected_poster.jpg" width="100%" title="Rejected ARCTIC Hand-Arm feasibility case"></video>
 
 **HO-Cap** — wrist flip and missed grasp
 
-<div style="position: relative; line-height: 0;">
-  <a href="assets/readme/virtual_base_hocap_rejected.mp4"><img src="assets/readme/virtual_base_hocap_rejected_poster.jpg" width="100%" style="display: block;" alt="Rejected HO-Cap Hand-Arm feasibility case. Click to play."></a>
-  <video src="assets/readme/virtual_base_hocap_rejected.mp4" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_hocap_rejected_poster.jpg" title="Rejected HO-Cap Hand-Arm feasibility case" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000;"></video>
-</div>
+<video src="https://github.com/user-attachments/assets/5d0061cf-5cac-4dc0-a8a7-3623d9caf754" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_hocap_rejected_poster.jpg" width="100%" title="Rejected HO-Cap Hand-Arm feasibility case"></video>
 
 ### Harmonized pseudo-references
 
