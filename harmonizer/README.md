@@ -10,7 +10,7 @@ cd Harmonizer
 pip install -r requirements.txt
 ```
 
-Prepare an input directory with matching files in `composite/` and `mask/`; results are written to `harmonized/`.
+Place composite images in `composite/` and their corresponding masks in `mask/`, using matching basenames. The outputs are saved to `harmonized/`.
 
 ```text
 example/
@@ -20,7 +20,7 @@ example/
     └── sample.png
 ```
 
-Run from this repository:
+From the HandEdit repository root, run:
 
 ```bash
 python harmonizer/run.py \

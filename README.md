@@ -35,7 +35,7 @@ The pseudo-GT pipeline combines human-region segmentation, background restoratio
 
 ### Pseudo-GT quality audit
 
-We uniformly sample 5,000 frames from the 734,864 final non-kept ARCTIC frames and assign one primary failure cause to each frame.
+We uniformly sampled 5,000 frames from the 734,864 final non-kept ARCTIC frames and assigned one primary failure cause to each frame.
 
 | Primary failure cause | Count | Share of audited non-kept samples |
 |---|---:|---:|
@@ -44,13 +44,13 @@ We uniformly sample 5,000 frames from the 734,864 final non-kept ARCTIC frames a
 | Background restoration / inpainting | 586 / 5,000 | 11.72% |
 | Rendering / compositing | 314 / 5,000 | 6.28% |
 
-These percentages describe the rejected ARCTIC pool only; they are not extrapolated to retained samples or the other source datasets.
+These percentages describe rejected ARCTIC frames only; they do not estimate residual errors in retained samples or failure rates in the other source datasets.
 
 ![Representative failures from the pseudo-GT pipeline](assets/readme/pseudo_gt_failure_examples.png)
 
 ### Virtual base for the Hand-Arm track
 
-For each sequence and target embodiment, the robot base is selected once and then fixed for every frame. We search 27 base candidates, reject candidates with IK-infeasible critical frames, joint-limit violations, or collisions, and inspect the top three valid sequence-level candidates. Sequences with no plausible placement are excluded.
+For each sequence and target embodiment, the robot base is selected once and then fixed for every frame. We evaluate 27 base candidates and discard those with IK-infeasible critical frames, joint-limit violations, or collisions. We inspect the top three valid sequence-level candidates and exclude sequences with no plausible placement.
 
 Each clip is arranged as **human operation · robot third-person view · robot first-person view**.
 
@@ -78,7 +78,7 @@ The following sequences preserve the fixed base but fail the feasibility review,
 
 ### Harmonized pseudo-references
 
-We train a lightweight Harmonizer on 10,000 natural egocentric hand images and apply it to the rendered robot region. It improves lighting, color, and boundary consistency while keeping robot pose and hand-object geometry unchanged. We use the harmonized references for an additional analysis on one tenth of the official test set; the main benchmark retains the original composites.
+We train a lightweight Harmonizer on 10,000 natural egocentric hand images and apply it to the rendered robot region. It improves lighting, color, and boundary consistency while keeping robot pose and hand-object geometry unchanged. We use the harmonized references for an additional analysis on one-tenth of the official test set; the main benchmark retains the original composites.
 
 ![Human input, original pseudo-reference, and harmonized pseudo-reference](assets/readme/harmonization_comparison.png)
 
