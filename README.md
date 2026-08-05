@@ -39,10 +39,10 @@ We uniformly sampled 5,000 frames from the 734,864 final non-kept ARCTIC frames 
 
 | Primary failure cause | Count | Share |
 |---|---:|---:|
-| Hand retargeting | 3,173 | 63.46% |
-| Segmentation | 927 | 18.54% |
-| Background restoration / inpainting | 586 | 11.72% |
-| Rendering / compositing | 314 | 6.28% |
+| Hand retargeting | 3,173&nbsp;/&nbsp;5,000 | 63.46% |
+| Segmentation | 927&nbsp;/&nbsp;5,000 | 18.54% |
+| Background restoration / inpainting | 586&nbsp;/&nbsp;5,000 | 11.72% |
+| Rendering / compositing | 314&nbsp;/&nbsp;5,000 | 6.28% |
 
 These percentages describe rejected ARCTIC frames only; they do not estimate residual errors in retained samples or failure rates in the other source datasets.
 
