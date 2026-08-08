@@ -8,7 +8,7 @@
 
 </div>
 
-<video src="https://github.com/user-attachments/assets/fe37157a-069d-4a48-a250-d616f10c3a20" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/teaser_poster.jpg" width="100%" title="HandEdit overview video"></video>
+<video src="https://handedit.github.io/assets/videos/teaser.mp4" autoplay muted loop playsinline controls preload="metadata" poster="https://handedit.github.io/assets/videos/teaser-poster.jpg" width="100%" title="HandEdit overview video"></video>
 
 ## Overview
 
