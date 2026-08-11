@@ -54,7 +54,6 @@ For each sequence and target embodiment, the robot base is selected once and the
 
 Each clip is arranged as **human operation · robot third-person view · robot first-person view**.
 
-#### Accepted fixed-base placements
 
 **ARCTIC** — `s04__box_use_01_view0`, frames 39–326
 
@@ -64,17 +63,6 @@ Each clip is arranged as **human operation · robot third-person view · robot f
 
 <video src="https://github.com/user-attachments/assets/6d25f0a0-c6b2-4240-ae95-f24e20fb6c15" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_hocap_accepted_poster.jpg" width="100%" title="Accepted HO-Cap fixed-base placement"></video>
 
-#### Rejected Hand-Arm feasibility cases
-
-The following sequences preserve the fixed base but fail the feasibility review, so they are not released as pseudo-GT.
-
-**ARCTIC** — delayed arm control and static object
-
-<video src="https://github.com/user-attachments/assets/19547e43-8ab8-4020-b225-ab5958a0ef97" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_arctic_rejected_poster.jpg" width="100%" title="Rejected ARCTIC Hand-Arm feasibility case"></video>
-
-**HO-Cap** — wrist flip and missed grasp
-
-<video src="https://github.com/user-attachments/assets/5d0061cf-5cac-4dc0-a8a7-3623d9caf754" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_hocap_rejected_poster.jpg" width="100%" title="Rejected HO-Cap Hand-Arm feasibility case"></video>
 
 ### Harmonized pseudo-references
 
