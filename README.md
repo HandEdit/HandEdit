@@ -27,7 +27,7 @@ HandEdit is built from EgoDex, ARCTIC, OakInk2, HOI4D, and HO-Cap. It covers 13 
 - **Hand-only:** replace the visible human hand with a target robot hand.
 - **Hand-Arm:** replace the visible hand-arm region with a target robot arm-hand embodiment.
 
-The [full dataset and release metadata](https://huggingface.co/datasets/HandEdit/HandEdit-Full) are available on Hugging Face.
+The [full dataset and release metadata](https://huggingface.co/datasets/HandEdit/HandEdit) are available on Hugging Face.
 
 ## Pseudo-GT construction and quality
 
