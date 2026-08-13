@@ -4,7 +4,7 @@
 
 ### A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing
 
-[Project page](https://handedit.github.io/) · [Dataset](https://huggingface.co/datasets/HandEdit/HandEdit-Full) · [Evaluation toolkit](#evaluation-toolkit)
+[Paper](https://arxiv.org/abs/2608.12122) · [Project page](https://handedit.github.io/) · [Dataset](https://huggingface.co/datasets/HandEdit/HandEdit-Full) · [Evaluation toolkit](#evaluation-toolkit)
 
 </div>
 
