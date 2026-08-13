@@ -146,3 +146,21 @@ Results are written to `runs/<experiment>/metrics/`. ROI metrics use the union o
 </details>
 
 The toolkit reports PSNR, SSIM, LPIPS, and FID together with Removal, Struct Fidelity, ID Fidelity, Interaction, and VLM scores.
+The evaluator reports PSNR/SSIM/LPIPS on three part(Full-image, ROI, and Background), FID, Removal, Struct Fidelity, ID Fidelity, Interaction, and VLM scores.
+
+`Struct Fidelity,` uses DINOv2 on the edited ROI and the pseudo-GT ROI. `ID Fidelity` combines two terms: max CLIP similarity between the edited ROI and the target URDF render bank, and masked pixel-wise CIE Lab similarity between the edited ROI and the pseudo-GT. The default weights are `0.5 / 0.5`, and the Lab temperature is `25`.
+
+`Interaction` is computed on the object/contact region. If `object_mask_path` is missing, the evaluator uses a local band around the replacement ROI.
+
+
+## 📜 Citation
+```bibtex
+@article{yang2026handedit,
+    title={{HandEdit}: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing}, 
+    author={Zhenjie Yang and Xingyu Jiao and Guopeng Zhong and Shuzhe Yang and Shi Che and Chao Wu and Chenyu Jiang and Dongjie Zhang and Yideng Zhang and Zheng Zhang and Muyun Jiang and Haisheng Su and Shuang Jin and Donghang Zhang and Chao Yang and Li Chen and Hongyang Li and Zuxuan Wu and Yu-Gang Jiang and Xiaosong Jia and Junchi Yan},
+    year={2026},
+    eprint={2608.12122},
+    archivePrefix={arXiv},
+    primaryClass={cs.RO}
+}
+```
