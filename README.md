@@ -156,11 +156,9 @@ The evaluator reports PSNR/SSIM/LPIPS on three part(Full-image, ROI, and Backgro
 ## 📜 Citation
 ```bibtex
 @article{yang2026handedit,
-    title={{HandEdit}: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing}, 
-    author={Zhenjie Yang and Xingyu Jiao and Guopeng Zhong and Shuzhe Yang and Shi Che and Chao Wu and Chenyu Jiang and Dongjie Zhang and Yideng Zhang and Zheng Zhang and Muyun Jiang and Haisheng Su and Shuang Jin and Donghang Zhang and Chao Yang and Li Chen and Hongyang Li and Zuxuan Wu and Yu-Gang Jiang and Xiaosong Jia and Junchi Yan},
-    year={2026},
-    eprint={2608.12122},
-    archivePrefix={arXiv},
-    primaryClass={cs.RO}
+  title={HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing},
+  author={Yang, Zhenjie and Jiao, Xingyu and Zhong, Guopeng and Yang, Shuzhe and Che, Shi and Wu, Chao and Jiang, Chenyu and Zhang, Dongjie and Zhang, Yideng and Zhang, Zheng and others},
+  journal={arXiv preprint arXiv:2608.12122},
+  year={2026}
 }
 ```
