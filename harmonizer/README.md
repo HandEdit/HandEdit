@@ -2,6 +2,10 @@
 
 This folder contains the lightweight harmonization checkpoint used to refine HandEdit pseudo-references and a small inference wrapper for the official [Harmonizer](https://github.com/ZHKKKe/Harmonizer) implementation.
 
+## Benchmark references
+
+The final harmonized outputs are the pseudo-GT references for the official Hand-only and Hand-Arm benchmarks and subsequent experiments, as described in the paper. Point the evaluation manifest's `gt_path` and `build_manifest.py --gt-root` to these outputs; the unharmonized composites are intermediate construction artifacts.
+
 ## Setup
 
 ```bash

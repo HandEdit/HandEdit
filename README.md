@@ -31,7 +31,7 @@ The [full dataset and release metadata](https://huggingface.co/datasets/HandEdit
 
 ## Pseudo-GT construction and quality
 
-The pseudo-GT pipeline combines human-region segmentation, background restoration, kinematic retargeting, robot rendering, and compositing. Automatic checks and human screening are applied throughout the pipeline.
+The pseudo-GT pipeline combines human-region segmentation, background restoration, kinematic retargeting, robot rendering, compositing, and foreground harmonization. Automatic checks and human screening are applied throughout the pipeline.
 
 ### Pseudo-GT quality audit
 
@@ -66,7 +66,7 @@ Each clip is arranged as **human operation · robot third-person view · robot f
 
 ### Harmonized pseudo-references
 
-We train a lightweight Harmonizer on 10,000 natural egocentric hand images and apply it to the rendered robot region. It improves lighting, color, and boundary consistency while keeping robot pose and hand-object geometry unchanged. We use the harmonized references for an additional analysis on one-tenth of the official test set; the main benchmark retains the original composites.
+We train a lightweight Harmonizer on 10,000 natural egocentric hand images and apply it to the rendered robot region. It improves lighting, color, and boundary consistency while keeping robot pose and hand-object geometry unchanged. The final harmonized outputs serve as the pseudo-GT references for the official Hand-only and Hand-Arm benchmarks and subsequent experiments. Reference-based metrics use these harmonized outputs, rather than the intermediate unharmonized composites.
 
 [Harmonizer inference wrapper and checkpoint](harmonizer/)
 
@@ -109,6 +109,8 @@ The evaluator reads one JSON object per line:
 ```json
 {"id":"000001","replacement_scope":"hand-only","target_name":"Shadow Hand","src_path":"data/src/000001.png","pred_path":"data/pred/000001.png","gt_path":"data/gt/000001.png","gt_mask_path":"data/gt_mask/000001.png","test_mask_path":"data/pred_mask/000001.png","human_mask_path":"data/human_mask/000001.png","robot_mask_path":"data/robot_mask/000001.png","object_mask_path":"data/object_mask/000001.png","urdf_ref_paths":["data/urdf/shadow/view_0.png","data/urdf/shadow/view_1.png"],"urdf_mask_paths":["data/urdf_mask/shadow/view_0.png","data/urdf_mask/shadow/view_1.png"]}
 ```
+
+For comparisons with the paper, `gt_path` and `--gt-root` must point to the final harmonized pseudo-GT references.
 
 Build a manifest:
 
