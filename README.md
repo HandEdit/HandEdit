@@ -57,11 +57,15 @@ Each clip is arranged as **human operation · robot third-person view · robot f
 
 **ARCTIC** — `s04__box_use_01_view0`, frames 39–326
 
-<video src="https://github.com/user-attachments/assets/1c27b881-719b-4f2e-a9a2-2bb92f1730cf" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_arctic_accepted_poster.jpg" width="100%" title="Accepted ARCTIC fixed-base placement"></video>
+[![Accepted ARCTIC fixed-base placement](assets/readme/virtual_base_arctic_accepted_poster.jpg)](https://handedit.github.io/assets/videos/virtual_base_arctic_accepted.mp4)
+
+[Play ARCTIC video](https://handedit.github.io/assets/videos/virtual_base_arctic_accepted.mp4) · [Download MP4](https://raw.githubusercontent.com/HandEdit/HandEdit/main/assets/readme/virtual_base_arctic_accepted.mp4)
 
 **HO-Cap** — `subject7_20231023_163653`, frames 210–509
 
-<video src="https://github.com/user-attachments/assets/6d25f0a0-c6b2-4240-ae95-f24e20fb6c15" autoplay muted loop playsinline controls preload="metadata" poster="assets/readme/virtual_base_hocap_accepted_poster.jpg" width="100%" title="Accepted HO-Cap fixed-base placement"></video>
+[![Accepted HO-Cap fixed-base placement](assets/readme/virtual_base_hocap_accepted_poster.jpg)](https://handedit.github.io/assets/videos/virtual_base_hocap_accepted.mp4)
+
+[Play HO-Cap video](https://handedit.github.io/assets/videos/virtual_base_hocap_accepted.mp4) · [Download MP4](https://raw.githubusercontent.com/HandEdit/HandEdit/main/assets/readme/virtual_base_hocap_accepted.mp4)
 
 
 ### Harmonized pseudo-references
