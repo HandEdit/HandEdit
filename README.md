@@ -17,14 +17,7 @@ This branch includes our modified **SAM 3**, **ProPainter** and **dex-retargetin
 
 ## Installation
 
-```bash
-git clone -b Preprocessing https://github.com/HandEdit/HandEdit.git
-cd HandEdit
-git clone https://github.com/dexsuite/dex-urdf.git dex-retargeting-main/assets
-git clone https://github.com/ZHKKKe/Harmonizer.git
-```
-
-Use Linux with an NVIDIA GPU. Rendering and image editing use separate environments because dex-retargeting and SAM 3 require different NumPy versions.
+Rendering and image editing use separate environments because dex-retargeting and SAM 3 require different NumPy versions.
 
 ```bash
 # Rendering
