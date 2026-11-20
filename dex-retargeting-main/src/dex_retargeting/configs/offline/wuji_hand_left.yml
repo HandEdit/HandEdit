@@ -1,0 +1,10 @@
+retargeting:
+  type: position
+  urdf_path: ../assemblies/ur5+wuji/urdf/Left_Hand.urdf
+  target_joint_names: null
+  target_link_names: [left_finger1_tip_link, left_finger2_tip_link, left_finger3_tip_link, left_finger4_tip_link,
+    left_finger5_tip_link, left_finger1_link2, left_finger2_link2, left_finger3_link2, left_finger4_link2,
+    left_finger5_link2]
+  target_link_human_indices: [4, 8, 12, 16, 20, 2, 6, 10, 14, 18]
+  add_dummy_free_joint: true
+  low_pass_alpha: 1

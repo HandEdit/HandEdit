@@ -4,9 +4,10 @@ retargeting:
 
   target_joint_names: [ 'pinky_proximal_joint', 'ring_proximal_joint', 'middle_proximal_joint', 'index_proximal_joint',
                         'thumb_proximal_pitch_joint', 'thumb_proximal_yaw_joint' ]
-  target_link_names: [ "thumb_tip",  "index_tip", "middle_tip", "ring_tip", "pinky_tip" ]
+  target_link_names: [ "thumb_tip", "index_tip", "middle_tip", "ring_tip", "pinky_tip",
+                       "thumb_intermediate", "index_intermediate", "middle_intermediate", "ring_intermediate", "pinky_intermediate" ]
 
-  target_link_human_indices: [ 4, 8, 12, 16, 20 ]
+  target_link_human_indices: [ 4, 8, 12, 16, 20, 2, 6, 10, 14, 18 ]
   add_dummy_free_joint: True
 
   # A smaller alpha means stronger filtering, i.e. more smooth but also larger latency

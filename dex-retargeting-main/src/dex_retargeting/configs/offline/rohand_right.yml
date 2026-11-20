@@ -1,0 +1,10 @@
+retargeting:
+  type: position
+  urdf_path: ../assemblies/rm_75+rohand/rohand_right.urdf
+  target_joint_names: null
+  target_link_names: [right_th_distal_link, right_if_distal_link, right_mf_distal_link, right_rf_distal_link,
+    right_lf_distal_link, right_th_proximal_link, right_if_proximal_link, right_mf_proximal_link, right_rf_proximal_link,
+    right_lf_proximal_link]
+  target_link_human_indices: [4, 8, 12, 16, 20, 2, 6, 10, 14, 18]
+  add_dummy_free_joint: true
+  low_pass_alpha: 1

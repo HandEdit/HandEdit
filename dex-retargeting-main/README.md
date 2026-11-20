@@ -2,6 +2,28 @@ HandEdit's [render_dexycb.py](example/position_retargeting/render_dexycb.py)
 retargets and renders one DexYCB camera clip.
 See the [preprocessing example](../README.md#dexycb-example).
 
+## Offline Retargeting Configurations
+
+The YAML files in [configs/offline](src/dex_retargeting/configs/offline)
+resolve `urdf_path` relative to `assets/robots/hands/`. The [setup instructions](../README.md#retargeting)
+provide the stand-alone hand models used in the example.
+Configurations with `../assemblies/` paths require separate URDF-Zoo models.
+Place the matching model folders in `assets/robots/assemblies/`, keeping the
+URDF and its meshes together. These assembly assets are not included.
+
+To load a configuration directly from the repository root:
+
+```python
+from pathlib import Path
+from dex_retargeting.retargeting_config import RetargetingConfig
+
+root = Path("dex-retargeting-main")
+RetargetingConfig.set_default_urdf_dir(root / "assets/robots/hands")
+retargeting = RetargetingConfig.load_from_file(
+    root / "src/dex_retargeting/configs/offline/ability_hand_left_vector_hybrid.yml"
+).build()
+```
+
 <div align="center">
   <h1 align="center"> Dex Retargeting </h1>
   <h3 align="center">

@@ -1,0 +1,11 @@
+retargeting:
+  type: vector
+  urdf_path: allegro_hand/allegro_hand_left.urdf
+  target_origin_link_names: [wrist, wrist, wrist, wrist]
+  target_task_link_names: [link_15.0_tip, link_11.0_tip, link_7.0_tip, link_3.0_tip]
+  target_link_human_indices:
+  - [0, 0, 0, 0]
+  - [4, 8, 12, 16]
+  scaling_factor: 1.6
+  low_pass_alpha: 0.2
+  add_dummy_free_joint: true

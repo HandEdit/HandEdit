@@ -1,0 +1,9 @@
+retargeting:
+  type: position
+  urdf_path: ../assemblies/panda+orca/orcahand_left.urdf
+  target_joint_names: null
+  target_link_names: [left_thumb_fingertip, left_index_fingertip, left_middle_fingertip, left_ring_fingertip,
+    left_pinky_fingertip, left_thumb_pp, left_index_pp, left_middle_pp, left_ring_pp, left_pinky_pp]
+  target_link_human_indices: [4, 8, 12, 16, 20, 2, 6, 10, 14, 18]
+  add_dummy_free_joint: true
+  low_pass_alpha: 1

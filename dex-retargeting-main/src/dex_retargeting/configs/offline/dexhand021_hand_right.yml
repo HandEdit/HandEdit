@@ -1,0 +1,9 @@
+retargeting:
+  type: position
+  urdf_path: ../assemblies/jaka_zu7+dexhand021/urdf/Right_Hand.urdf
+  target_joint_names: null
+  target_link_names: [r_f_link1_4, r_f_link2_4, r_f_link3_4, r_f_link4_4, r_f_link5_4, r_f_link1_2, r_f_link2_2,
+    r_f_link3_2, r_f_link4_2, r_f_link5_2]
+  target_link_human_indices: [4, 8, 12, 16, 20, 2, 6, 10, 14, 18]
+  add_dummy_free_joint: true
+  low_pass_alpha: 1

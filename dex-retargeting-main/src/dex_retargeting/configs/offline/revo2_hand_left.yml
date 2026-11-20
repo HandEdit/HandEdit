@@ -1,0 +1,11 @@
+retargeting:
+  type: position
+  urdf_path: ../assemblies/rm_65+BrainCo/urdf/revo2_left_hand.urdf
+  target_joint_names: [left_thumb_metacarpal_joint, left_thumb_proximal_joint, left_index_proximal_joint,
+    left_middle_proximal_joint, left_ring_proximal_joint, left_pinky_proximal_joint]
+  target_link_names: [left_thumb_tip_link, left_index_tip_link, left_middle_tip_link, left_ring_tip_link,
+    left_pinky_tip_link, left_thumb_proximal_link, left_index_proximal_link, left_middle_proximal_link,
+    left_ring_proximal_link, left_pinky_proximal_link]
+  target_link_human_indices: [4, 8, 12, 16, 20, 2, 6, 10, 14, 18]
+  add_dummy_free_joint: true
+  low_pass_alpha: 1

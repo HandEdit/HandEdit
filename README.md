@@ -25,7 +25,8 @@ The two environments keep dex-retargeting's NumPy requirement (`>=2`) separate f
 ### Retargeting
 
 `handedit-retargeting` is used for motion retargeting and rendering.
-The renderer uses the robot URDFs and meshes from [dex-urdf](https://github.com/dexsuite/dex-urdf).
+The DexYCB example uses the Ability Hand URDF and meshes from [dex-urdf](https://github.com/dexsuite/dex-urdf).
+See [offline retargeting](dex-retargeting-main/README.md#offline-retargeting-configurations) for other robot configurations.
 
 ```bash
 git clone https://github.com/dexsuite/dex-urdf.git dex-retargeting-main/assets

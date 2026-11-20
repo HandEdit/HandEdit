@@ -1,0 +1,11 @@
+retargeting:
+  type: vector
+  urdf_path: leap_hand/leap_hand_left.urdf
+  target_origin_link_names: [base, base, base, base]
+  target_task_link_names: [thumb_tip_head, index_tip_head, middle_tip_head, ring_tip_head]
+  target_link_human_indices:
+  - [0, 0, 0, 0]
+  - [4, 8, 12, 16]
+  scaling_factor: 1.6
+  low_pass_alpha: 0.2
+  add_dummy_free_joint: true

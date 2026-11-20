@@ -1,0 +1,11 @@
+retargeting:
+  type: position
+  urdf_path: ../assemblies/ur5+RH56DFX/urdf/Right_Hand.urdf
+  target_joint_names: [right_thumb_1_joint, right_thumb_2_joint, right_index_1_joint, right_middle_1_joint,
+    right_ring_1_joint, right_little_1_joint]
+  target_link_names: [right_thumb_tip, right_index_tip, right_middle_tip, right_ring_tip, right_little_tip,
+    right_thumb_2, right_index_1, right_middle_1, right_ring_1, right_little_1]
+  target_link_human_indices: [4, 8, 12, 16, 20, 2, 6, 10, 14, 18]
+  add_dummy_free_joint: true
+  ignore_mimic_joint: true
+  low_pass_alpha: 1

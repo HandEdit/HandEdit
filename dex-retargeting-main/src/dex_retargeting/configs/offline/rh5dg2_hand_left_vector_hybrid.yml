@@ -1,0 +1,17 @@
+retargeting:
+  type: vector
+  urdf_path: ../assemblies/ur5+RH5DG2/urdf/Left_Hand.urdf
+  target_joint_names: [left_thumb_yaw_joint, left_thumb_mcp_joint, left_thumb_dip_joint, left_index_pitch_joint,
+    left_index_mcp_joint, left_index_pip_joint, left_middle_pitch_joint, left_middle_mcp_joint, left_middle_pip_joint,
+    left_ring_mcp_joint, left_ring_pip_joint, left_pinky_mcp_joint, left_pinky_pip_joint]
+  target_origin_link_names: [left_hand_base, left_hand_base, left_hand_base, left_hand_base, left_hand_base,
+    left_thumb_mcp, left_index_mcp, left_middle_mcp, left_ring_mcp, left_pinky_mcp]
+  target_task_link_names: [left_thumb_force_sensor, left_index_force_sensor, left_middle_force_sensor,
+    left_ring_force_sensor, left_pinky_force_sensor, left_thumb_force_sensor, left_index_force_sensor,
+    left_middle_force_sensor, left_ring_force_sensor, left_pinky_force_sensor]
+  target_link_human_indices:
+  - [0, 0, 0, 0, 0, 2, 6, 10, 14, 18]
+  - [4, 8, 12, 16, 20, 4, 8, 12, 16, 20]
+  add_dummy_free_joint: true
+  scaling_factor: 1.0
+  low_pass_alpha: 0.2
