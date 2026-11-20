@@ -1,7 +1,6 @@
-HandEdit's interactive tools are [humanhand_sam.py](humanhand_sam.py) for human
-hand masks and [sim_sam.py](sim_sam.py) for robot cutouts. Follow the
-[HandEdit installation and pipeline](../README.md) for setup and command-line
-inference with [segment.py](segment.py). The upstream SAM 3 documentation follows.
+HandEdit uses [segment.py](segment.py) for command-line segmentation,
+[humanhand_sam.py](humanhand_sam.py) for interactive human-hand masks and
+[sim_sam.py](sim_sam.py) for robot cutouts. See the [preprocessing example](../README.md#dexycb-example).
 
 # SAM 3: Segment Anything with Concepts
 

@@ -2,6 +2,8 @@
 
 For HandEdit's single-camera pipeline, use [render_dexycb.py](render_dexycb.py)
 following the [main README](../../../README.md).
+The [inspect_dexycb.py](inspect_dexycb.py) viewer selects one sample with
+`--data-id` and saves rendered frames with `--headless`.
 The `generate_retargeted_videos.py` renderer in this directory also renders the
 human hand and requires the MANO/manopth setup below. After that setup, run from
 this directory:

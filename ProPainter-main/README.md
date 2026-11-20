@@ -1,7 +1,6 @@
-HandEdit uses the modified [batch_inference.py](batch_inference.py) and
-[inference_jiao.py](inference_jiao.py) to process mask-matched clips while retaining
-source frame names. Follow the [HandEdit installation and pipeline](../README.md)
-for these scripts. The upstream ProPainter documentation follows.
+HandEdit's [batch_inference.py](batch_inference.py) runs
+[inference.py](inference.py) on mask-matched clips and retains source
+frame names. See the [preprocessing example](../README.md#dexycb-example).
 
 <div align="center">
 

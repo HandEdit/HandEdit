@@ -2,7 +2,7 @@ import os
 import argparse
 import torch
 from tqdm import tqdm
-from inference_jiao import load_models, inference_single, get_device
+from inference import load_models, inference_single, get_device
 
 def main():
     parser = argparse.ArgumentParser(description='Batch Inference for ProPainter')
@@ -11,7 +11,6 @@ def main():
     parser.add_argument('--mask_root', type=str, required=False, help='Root directory containing mask folders (mirrors photo_root structure)')
     parser.add_argument('--output_root', type=str, required=True, help='Root directory for the output')
     
-    # Add other arguments from inference_jiao.py that we want to support
     parser.add_argument("--resize_ratio", type=float, default=1.0, help='Resize scale for processing video.')
     parser.add_argument('--height', type=int, default=-1, help='Height of the processing video.')
     parser.add_argument('--width', type=int, default=-1, help='Width of the processing video.')

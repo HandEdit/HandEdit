@@ -1,8 +1,6 @@
-This copy includes HandEdit's modified DexYCB dataset renderer in
-[example/position_retargeting](example/position_retargeting).
-Start with the [HandEdit installation and single-camera example](../README.md)
-using [render_dexycb.py](example/position_retargeting/render_dexycb.py).
-The upstream dex-retargeting documentation follows.
+HandEdit's [render_dexycb.py](example/position_retargeting/render_dexycb.py)
+retargets and renders one DexYCB camera clip.
+See the [preprocessing example](../README.md#dexycb-example).
 
 <div align="center">
   <h1 align="center"> Dex Retargeting </h1>

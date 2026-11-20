@@ -2,9 +2,7 @@
 
 [Project](https://handedit.github.io/) | [Dataset](https://huggingface.co/datasets/HandEdit/HandEdit) | [Models](https://huggingface.co/HandEdit/HandEdit-LoRA)
 
-Code for the HandEdit data processing pipeline. We retarget human hand motion to a robot hand, remove the human hand from the source images, and composite and harmonize the rendered robot with the scene.
-
-This branch includes our modified **SAM 3**, **ProPainter** and **dex-retargeting**. We use one [DexYCB](https://dex-ycb.github.io/) camera clip with a right Ability Hand as an example.
+Data preprocessing for HandEdit, including our modified SAM 3, ProPainter and dex-retargeting code.
 
 ```text
 .
@@ -12,32 +10,48 @@ This branch includes our modified **SAM 3**, **ProPainter** and **dex-retargetin
 |-- sam3-main/             # Human hand masks and robot cutouts
 |-- ProPainter-main/       # Background inpainting
 |-- composite.py           # Composition and blending
-`-- harmonize.py           # Image harmonization
+|-- harmonize.py           # Image harmonization
+`-- frames.py              # Shared frame I/O
 ```
+
+The stage scripts share [frames.py](frames.py) for frame indexing, filename matching and output-directory handling.
 
 ## Installation
 
-Rendering and image editing use separate environments because dex-retargeting and SAM 3 require different NumPy versions.
+The two environments keep dex-retargeting's NumPy requirement (`>=2`) separate from SAM 3's (`<2`).
+
+### Retargeting
+
+`handedit-retargeting` is used for motion retargeting and rendering.
 
 ```bash
-# Rendering
-conda create -n handedit-render python=3.10 -y
-conda activate handedit-render
+conda create -n handedit-retargeting python=3.10 -y
+conda activate handedit-retargeting
 pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements.txt -e ./dex-retargeting-main sapien==3.0.1 "setuptools<82"
-
-# Image editing
-conda create -n handedit-edit python=3.12 -y
-conda activate handedit-edit
-pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorch.org/whl/cu128
-pip install -r requirements.txt -r ProPainter-main/requirements.txt -e ./sam3-main "setuptools<82" kornia==0.8.2
 ```
 
-Place the [SAM 3 checkpoint](https://huggingface.co/facebook/sam3) at `weights/sam3.pt` and our [Harmonizer checkpoint](https://github.com/HandEdit/HandEdit/blob/main/harmonizer/harmonizer_hand.pth) at `weights/harmonizer_hand.pth`. ProPainter downloads its pretrained weights on first use; they are also available from the [official release](https://github.com/sczhou/ProPainter/releases/tag/v0.1.0).
+### Image Synthesis
 
-## Data Preparation
+`handedit-synthesis` is used for segmentation, inpainting, compositing and harmonization.
 
-Download the sequences, calibration files and object models from [DexYCB](https://dex-ycb.github.io/), keeping its original layout:
+```bash
+conda create -n handedit-synthesis python=3.12 -y
+conda activate handedit-synthesis
+pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorch.org/whl/cu128
+pip install -r requirements.txt -r ProPainter-main/requirements.txt \
+  -e ./sam3-main "setuptools<82" kornia==0.8.2
+```
+
+### Checkpoints
+
+- [SAM 3](https://huggingface.co/facebook/sam3): `weights/sam3.pt`.
+- [HandEdit Harmonizer](https://github.com/HandEdit/HandEdit/blob/main/harmonizer/harmonizer_hand.pth): `weights/harmonizer_hand.pth`.
+- [ProPainter](https://github.com/sczhou/ProPainter/releases/tag/v0.1.0): weights are downloaded to `ProPainter-main/weights/` on first use.
+
+## DexYCB Example
+
+We use one camera clip with a right Ability Hand. Download the sequences, calibration files and object models from [DexYCB](https://dex-ycb.github.io/) and keep the original layout:
 
 ```text
 data/dex-ycb/
@@ -52,30 +66,28 @@ data/dex-ycb/
             `-- ...
 ```
 
-The commands below illustrate one clip. Replace `SUBJECT`, `CAPTURE` and `CAMERA` with a sequence containing a visible right hand (`mano_sides: [right]` in `meta.yml`). Select at least two consecutive annotated frames and use a new output directory.
-
-## Data Processing Pipeline
+Replace `SUBJECT`, `CAPTURE` and `CAMERA` with your sequence. The example requires `mano_sides: [right]` in `meta.yml` and a continuous clip with valid hand annotations. Use a new output directory.
 
 ### 1. Retargeting and Rendering
 
-Retarget the annotated fingertips to the Ability Hand. Render the robot and objects together with the source camera intrinsics to retain object occlusion.
+[render_dexycb.py](dex-retargeting-main/example/position_retargeting/render_dexycb.py) retargets the annotated fingertips to the Ability Hand and renders the robot with the scene objects using the source camera intrinsics.
 
 ```bash
-conda activate handedit-render
+conda activate handedit-retargeting
 python dex-retargeting-main/example/position_retargeting/render_dexycb.py \
   --view data/dex-ycb/SUBJECT/CAPTURE/CAMERA \
   --frames 41 80 \
   --output work/clip
 ```
 
-The output contains matching `rgb/` and `rendered/` frames, named by their source frame IDs.
+It writes source frames to `work/clip/rgb/` and robot renders to `work/clip/rendered/`, keeping the source frame IDs.
 
 ### 2. Background Preparation
 
-Segment the human hand with SAM 3, then use ProPainter to remove it and reconstruct the background from neighboring frames.
+[segment.py](sam3-main/segment.py) tracks the human hand and exports binary masks. [batch_inference.py](ProPainter-main/batch_inference.py) calls [inference.py](ProPainter-main/inference.py) to remove the masked hand with ProPainter.
 
 ```bash
-conda activate handedit-edit
+conda activate handedit-synthesis
 python sam3-main/segment.py human --input work/clip/rgb --output work/human_masks
 python ProPainter-main/batch_inference.py \
   --photo_root work/clip/rgb \
@@ -85,17 +97,22 @@ python ProPainter-main/batch_inference.py \
 
 ### 3. Robotic Hand Extraction
 
-Segment the rendered robot hand and save RGBA cutouts with the visible robot region as alpha.
+Run `segment.py robot` on the rendered frames to export RGBA robot cutouts.
 
 ```bash
 python sam3-main/segment.py robot --input work/clip/rendered --output work/robot_cutouts
 ```
 
-The interactive tools [humanhand_sam.py](sam3-main/humanhand_sam.py) and [sim_sam.py](sam3-main/sim_sam.py) are included for mask selection and correction.
+For interactive mask selection and correction, use [humanhand_sam.py](sam3-main/humanhand_sam.py) for the source hand or [sim_sam.py](sam3-main/sim_sam.py) for the rendered robot:
+
+```bash
+python sam3-main/humanhand_sam.py
+python sam3-main/sim_sam.py
+```
 
 ### 4. Composition and Blending
 
-Erode and feather the robot alpha mask, smooth foreground RGB, and composite the robot over the inpainted background.
+[composite.py](composite.py) erodes and feathers the robot alpha mask, smooths foreground RGB and blends the cutout with the inpainted background.
 
 ```bash
 python composite.py \
@@ -113,7 +130,7 @@ python composite.py \
 
 ### 5. Image Harmonization
 
-Apply the HandEdit Harmonizer checkpoint to adjust temperature, brightness, contrast, saturation, highlights and shadows inside the robot mask. Pixels outside the mask retain their composite values.
+[harmonize.py](harmonize.py) loads the HandEdit Harmonizer checkpoint and adjusts temperature, brightness, contrast, saturation, highlights and shadows inside the robot mask. Pixels outside the mask keep their composite values.
 
 ```bash
 python harmonize.py \
@@ -122,7 +139,7 @@ python harmonize.py \
   --output work/clip/edited
 ```
 
-The resulting training pairs are the source frames in `work/clip/rgb/` and the corresponding edited frames in `work/clip/edited/`.
+The paired training images are `work/clip/rgb/000041.jpg` and `work/clip/edited/000041.png`, and so on.
 
 ## Acknowledgments
 
