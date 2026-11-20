@@ -18,24 +18,43 @@ The stage scripts share [frames.py](frames.py) for frame indexing, filename matc
 
 ## Installation
 
+Run the commands below from the repository root.
+
 The two environments keep dex-retargeting's NumPy requirement (`>=2`) separate from SAM 3's (`<2`).
 
 ### Retargeting
 
 `handedit-retargeting` is used for motion retargeting and rendering.
+The renderer uses the robot URDFs and meshes from [dex-urdf](https://github.com/dexsuite/dex-urdf).
 
 ```bash
+git clone https://github.com/dexsuite/dex-urdf.git dex-retargeting-main/assets
+
 conda create -n handedit-retargeting python=3.10 -y
 conda activate handedit-retargeting
 pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements.txt -e ./dex-retargeting-main sapien==3.0.1 "setuptools<82"
 ```
 
+The Ability Hand example expects this layout. Keep the mesh directories alongside the URDF.
+
+```text
+dex-retargeting-main/assets/robots/hands/ability_hand/
+|-- ability_hand_right.urdf
+`-- meshes/
+    |-- visual/
+    `-- collision/
+```
+
 ### Image Synthesis
 
 `handedit-synthesis` is used for segmentation, inpainting, compositing and harmonization.
+Clone Harmonizer into `Harmonizer/` so that `harmonize.py` can import `Harmonizer/src/model/`.
+The environment below includes its inference dependencies.
 
 ```bash
+git clone https://github.com/ZHKKKe/Harmonizer.git Harmonizer
+
 conda create -n handedit-synthesis python=3.12 -y
 conda activate handedit-synthesis
 pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorch.org/whl/cu128
