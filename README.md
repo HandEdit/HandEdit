@@ -165,4 +165,7 @@ The paired training images are `work/clip/rgb/000041.jpg` and `work/clip/edited/
 
 We thank [SAM 3](https://github.com/facebookresearch/sam3), [ProPainter](https://github.com/sczhou/ProPainter), [dex-retargeting](https://github.com/dexsuite/dex-retargeting), [dex-urdf](https://github.com/dexsuite/dex-urdf), [SAPIEN](https://github.com/haosulab/SAPIEN), [Harmonizer](https://github.com/ZHKKKe/Harmonizer), [DexYCB](https://github.com/NVlabs/dex-ycb-toolkit), [manopth](https://github.com/hassony2/manopth) and [MANO](https://mano.is.tue.mpg.de/) for their code, models and data.
 
-Third-party code retains its original licenses and copyright notices. See [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES) and the license files in each model directory.
+## License
+
+Our original code is licensed under the [MIT License](LICENSE).
+Third-party components retain their respective licenses.
